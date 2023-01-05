@@ -1,3 +1,3 @@
-# Product Landing Page
+# Personal Portfolio Webpage
 
-A simple product landing page inspired by freeCodeCamp's Responsive Web Design certificate.
+A simple personal portfolio webpage inspired by freeCodeCamp's Responsive Web Design certificate.
