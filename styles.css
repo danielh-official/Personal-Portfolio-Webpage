@@ -1,77 +1,289 @@
-#email {
-    display: block;
-    margin-bottom: 10px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 12em;
+/**
+* CSS was taken from https://personal-portfolio.freecodecamp.rocks/ and modified.
+* 
+* ---
+* Original CSS Citation
+* ---
+* Author: freeCodeCamp
+* Date: 01/05/2022
+* Availability: https://personal-portfolio.freecodecamp.rocks/
+* Title: Personal Portfolio
+* Code Version: Unknown
+*/
+
+:root {
+    --main-white: #f4f4f4;
+    --main-red: #ff1a39;
+    --main-blue: #6c8ddb;
+    --main-gray: #2b2b2b;
+    --main-green: #37e037;
 }
 
-#submit {
-    margin-left: auto;
-    margin-right: auto;
-    width: 8em;
-    background-color: rgba(51, 51, 51, 0.05);
-    border-radius: 8px;
-    border-width: 0;
-    color: #333333;
-    cursor: pointer;
-    display: inline-block;
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 20px;
-    list-style: none;
-    margin: 0;
-    padding: 10px 12px;
-    text-align: center;
-    transition: all 200ms;
-    vertical-align: baseline;
-    white-space: nowrap;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-}
-
-#body {
-    width: 960px;
-    margin: auto;
-    padding: 10px;
-    text-align: center;
-}
-
-header {
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    display: flex;
-    justify-content: space-between;
-}
-
-header ul {
-    list-style-type: none;
+* {
     margin: 0;
     padding: 0;
-    overflow: hidden;
 }
 
-header li {
-    float: left;
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
 }
 
-header li a {
-    display: block;
-    color: black;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+    scroll-behavior: smooth;
 }
 
 @media only screen and (max-width: 600px) {
-    #body {
-        width: 100%;
-        margin: auto;
-        margin-top: 80px;
-        padding: 10px;
-        text-align: center;
+    html {
+        font-size: 55%;
     }
+
+    .contact-section-header > h2 {
+        font-size: 12px;
+    }
+
+    .nav {
+        justify-content: center;
+    }
+
+    .nav-list {
+        margin: 0 1rem;
+    }
+
+    .projects-section-header {
+        font-size: 4rem;
+    }
+
+    .projects-section {
+        padding: 6rem 1rem;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-details {
+        font-size: 1rem;
+        text-shadow: 2px 2px 1px #1f1f1f;
+        transition: transform 0.3s ease-out;
+    }
+
+    .contact-details:hover {
+        transform: translateY(-6px) translateX(4px);
+    }
+}
+
+body {
+    font-family: "monospace";
+    font-size: 1.8rem; /* 18px */
+    font-weight: 400;
+    line-height: 1.4;
+    color: var(--main-white);
+}
+
+h1,
+h2 {
+    font-family: "Raleway", sans-serif;
+    font-weight: 700;
+    text-align: center;
+}
+
+h1 {
+    font-size: 6rem;
+}
+
+h2 {
+    font-size: 4.2rem;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: var(--main-white);
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+.nav {
+    display: flex;
+    justify-content: flex-end;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: var(--main-green);
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.4);
+    z-index: 10;
+}
+
+.nav-list {
+    display: flex;
+    margin-right: 2rem;
+}
+
+.nav-list a {
+    display: block;
+    font-size: 2.2rem;
+    padding: 2rem;
+}
+
+.nav-list a:hover {
+    background: var(--main-blue);
+}
+
+.welcome-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-color: #000;
+    background-image: linear-gradient(62deg, #3a3d40 0%, #181719 100%);
+}
+
+.welcome-section > p {
+    font-size: 3rem;
+    font-weight: 200;
+    font-style: italic;
+    color: var(--main-green);
+}
+
+.projects-section {
+    text-align: center;
+    padding: 10rem 2rem;
+    background: var(--main-blue);
+}
+
+.projects-section-header {
+    max-width: 640px;
+    margin: 0 auto 6rem auto;
+    border-bottom: 0.2rem dashed var(--main-white);
+    text-transform: uppercase;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-gap: 4rem;
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    margin-bottom: 6rem;
+}
+
+.project {
+    background: var(--main-gray);
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    border-radius: 2px;
+    padding: 5px;
+    transition: transform 0.3s ease-out;
+}
+
+.project:hover {
+    transform: translateY(6px) translateX(4px);
+}
+
+.project-title {
+    font-size: 2rem;
+    padding: 2rem 0.5rem;
+}
+
+.contact-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 20vh;
+    background: var(--main-gray);
+    gap: 5px;
+}
+
+.contact-section-header > h2 {
+    font-size: 2rem;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    max-width: 980px;
+    flex-wrap: wrap;
+}
+
+.contact-details {
+    font-size: 2.4rem;
+    text-shadow: 2px 2px 1px #1f1f1f;
+    transition: transform 0.3s ease-out;
+}
+
+.contact-details:hover {
+    transform: translateY(-6px) translateX(4px);
+}
+
+#subtitle {
+    color: rgba(232, 232, 232, 0.4);
+    font-size: 26px;
+}
+
+#myname {
+    color: var(--main-green);
+    font-style: italic;
+}
+
+.scroll-down-arrow {
+    margin-top: 100px;
+    font-size: 2em;
+    transition: transform 0.3s ease-out;
+    text-decoration: inherit;
+}
+
+.scroll-down-arrow:hover {
+    transform: translateY(6px);
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: var(--main-green);
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 150%;
+    left: 50%;
+    margin-left: -60px;
+    font-size: 12px;
+}
+
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: var(--main-green) transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
 }
